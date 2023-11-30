@@ -1,7 +1,24 @@
 #include <stdio.h>
+#include "measurementData.h"
 
-int main(int argc, char const *argv[])
+int main()
 {
-    
+    FILE *datei;
+    measurementData *ptrData=NULL;
+    datei=fopen("processData.txt","r");
+
+    unsigned int numLine=numLines(datei);
+
+    printf("\n%d\n", numLine);
+
+    ptrData = readData(datei, numLine);
+
+    fclose(datei);
+
+    for (int i = 0; i < numLine; i++)
+    {
+        printf("%d;%d;%d;%d;%d;%d\n", ptrData[i].sensorId, ptrData[i].measuredValue, ptrData[i].warningLow, ptrData[i].warningHigh, ptrData[i].alarmLow, ptrData[i].alarmHigh);
+    }
+
     return 0;
 }
