@@ -5,6 +5,7 @@ int main()
 {
     FILE *datei;
     measurementData *ptrData=NULL;
+    measurementDataSort *sortMeasurementsDataArray;
     datei=fopen("processData.txt","r");
 
     unsigned int numLine=numLines(datei);
@@ -20,5 +21,9 @@ int main()
         printf("%d;%d;%d;%d;%d;%d\n", ptrData[i].sensorId, ptrData[i].measuredValue, ptrData[i].warningLow, ptrData[i].warningHigh, ptrData[i].alarmLow, ptrData[i].alarmHigh);
     }
 
+    sortMeasurementsData(sortMeasurementsDataArray,ptrData,numLine);
+
+    while (1)
+    {}
     return 0;
 }

@@ -15,16 +15,14 @@ typedef struct
 
 typedef struct
 {
-    unsigned short sensorId;
-    unsigned short *measuredValue;
-    unsigned short warningLow;
-    unsigned short warningHigh;
-    unsigned short alarmLow;
-    unsigned short alarmHigh;
+    measurementData measurementData[100];
+    int numSensors;
+}measurementDataSort;
 
-} sortedData;
+void sortMeasurementsData(measurementDataSort *sortMeasurementsDataArray,measurementData *ptrData, int numLines);
+
+measurementData  *readData(FILE *datei, unsigned int numLines);
 
 unsigned int numLines(FILE *datei);
-measurementData  *readData(FILE *datei, unsigned int numLines);
 
 #endif

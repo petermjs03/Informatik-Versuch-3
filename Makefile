@@ -57,7 +57,7 @@ DEPS := $(OBJECTS:.o=.d)
 OUTPUTMAIN := $(call FIXPATH,$(OUTPUT)/$(MAIN))
 
 all: $(OUTPUT) $(MAIN)
-	@echo Executing 'all' complete!
+#	@echo Executing 'all' complete!
 
 $(OUTPUT):
 	$(MD) $(OUTPUT)
