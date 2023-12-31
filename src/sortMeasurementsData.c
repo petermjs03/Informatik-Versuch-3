@@ -31,8 +31,7 @@ int checkNumber(measurementDataSort *sortMeasurementsDataArray,unsigned short se
     return -1;
 }
 
-void sortMeasurementsData(measurementDataSort *sortMeasurementsDataArray,measurementData *ptrData, int numLines){
-    sortMeasurementsDataArray = (measurementDataSort*) malloc(10*sizeof(measurementDataSort));
+int sortMeasurementsData(measurementDataSort *sortMeasurementsDataArray,measurementData *ptrData, int numLines){
     unsigned int save;
     int numSensors=0;
     for (unsigned int i = 0; i < numLines; i++)
@@ -59,7 +58,7 @@ void sortMeasurementsData(measurementDataSort *sortMeasurementsDataArray,measure
         }
         
     }
-    
+    return numSensors;
 }
 
 

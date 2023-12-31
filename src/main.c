@@ -5,14 +5,19 @@ int main()
 {
     FILE *datei;
     measurementData *ptrData=NULL;
-    measurementDataSort *sortMeasurementsDataArray;
+    measurementDataSort *sortMeasurementsDataArray=NULL;
+    int numSensors;
+
     datei=fopen("processData.txt","r");
 
     unsigned int numLine=numLines(datei);
 
+    ptrData = (measurementData *) malloc(numLine*sizeof(measurementData));
+    sortMeasurementsDataArray = (measurementData *) malloc(numLine*sizeof(measurementData));
+
     printf("\n%d\n", numLine);
 
-    ptrData = readData(datei, numLine);
+    readData(datei, numLine, ptrData);
 
     fclose(datei);
 
@@ -21,9 +26,11 @@ int main()
         printf("%d;%d;%d;%d;%d;%d\n", ptrData[i].sensorId, ptrData[i].measuredValue, ptrData[i].warningLow, ptrData[i].warningHigh, ptrData[i].alarmLow, ptrData[i].alarmHigh);
     }
 
-    sortMeasurementsData(sortMeasurementsDataArray,ptrData,numLine);
+    numSensors = sortMeasurementsData(sortMeasurementsDataArray,ptrData,numLine);
+    sortMeasurementsDataArray = (measurementDataSort*) realloc(sortMeasurementsDataArray,numSensors*sizeof(measurementDataSort));
 
-    while (1)
-    {}
+
+    free(sortMeasurementsDataArray);
+    free(ptrData);
     return 0;
 }
