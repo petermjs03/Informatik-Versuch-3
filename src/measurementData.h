@@ -19,15 +19,22 @@ typedef struct
     int numSensors;
 }measurementDataSort;
 
+typedef struct
+{
+    unsigned short sensorId;
+    unsigned short warningsLow;
+    unsigned short warningsHigh;
+    unsigned short alarmsLow;
+    unsigned short alarmsHigh;
+
+} warningsAlarmsData;
+
 int sortMeasurementsData(measurementDataSort *sortMeasurementsDataArray,measurementData *ptrData, int numLines);
 
 void readData(FILE *datei, unsigned int numLines, measurementData *ptrData);
 
 unsigned int numLines(FILE *datei);
 
-int alarmsHigh(measurementDataSort *sortMeasurementsDataArray, int numSensors);
-int alarmsLow(measurementDataSort *sortMeasurementsDataArray, int numSensors);
-int warningsHigh(measurementDataSort *sortMeasurementsDataArray, int numSensors);
-int warningsLow(measurementDataSort *sortMeasurementsDataArray, int numSensors);
+void warningsAlarms(measurementDataSort *sortMeasurementsDataArray, warningsAlarmsData *warningsAlarmsArray, int numSensors);
 
 #endif

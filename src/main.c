@@ -6,9 +6,10 @@ int main()
     FILE *datei;
     measurementData *ptrData=NULL;
     measurementDataSort *sortMeasurementsDataArray=NULL;
+    warningsAlarmsData *warningsAlarmsArray=NULL;
     int numSensors;
 
-    datei=fopen("processData.txt","r");
+    datei=fopen("processData2.txt","r");
 
     unsigned int numLine=numLines(datei);
 
@@ -28,9 +29,12 @@ int main()
 
     numSensors = sortMeasurementsData(sortMeasurementsDataArray,ptrData,numLine);
     sortMeasurementsDataArray = (measurementDataSort*) realloc(sortMeasurementsDataArray,numSensors*sizeof(measurementDataSort));
+    warningsAlarmsArray = (warningsAlarmsData*) malloc(numSensors*sizeof(warningsAlarmsData));
 
+    warningsAlarms(sortMeasurementsDataArray, warningsAlarmsArray, numSensors);
 
     free(sortMeasurementsDataArray);
     free(ptrData);
+    free(warningsAlarmsArray);
     return 0;
 }
