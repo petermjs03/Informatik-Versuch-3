@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "measurementData.h"
 
-void warningsAlarms(measurementDataSort *sortMeasurementsDataArray,  warningsAlarmsData *warningsAlarmsArray, int numSensors)
+void warningsAlarms(measurementDataSort *sortMeasurementsDataArray, warningsAlarmsData *warningsAlarmsArray, int numSensors)
 {
     int i = 0;
     int j = 0;
@@ -34,7 +34,6 @@ void warningsAlarms(measurementDataSort *sortMeasurementsDataArray,  warningsAla
             {
                 numAlarmsLow++;
             }
-            
         }
         warningsAlarmsArray[i].sensorId = sortMeasurementsDataArray[i].measurementData[0].sensorId;
         warningsAlarmsArray[i].warningsHigh = numWarningsHigh;

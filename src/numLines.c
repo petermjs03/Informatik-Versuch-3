@@ -3,16 +3,16 @@
 
 unsigned int numLines(FILE *datei)
 {
-    unsigned int numLines=0;
+    unsigned int numLines = 0;
     char letter;
 
-    while ((letter=fgetc(datei))!=EOF)
+    while ((letter = fgetc(datei)) != EOF)
     {
-        if (letter=='\n')
+        if (letter == '\n')
         {
             numLines++;
-        }       
+        }
     }
-    
+
     return numLines;
 }
