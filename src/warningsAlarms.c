@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "measurementData.h"
 
 void warningsAlarms(measurementDataSort *sortMeasurementsDataArray, warningsAlarmsData *warningsAlarmsArray, int numSensors)

@@ -1,9 +1,8 @@
-#include <stdio.h>
 #include "measurementData.h"
 
-unsigned int numLines(FILE *datei)
+int numLines(FILE *datei)
 {
-    unsigned int numLines = 0;
+    int numLines = 0;
     char letter;
 
     while ((letter = fgetc(datei)) != EOF)

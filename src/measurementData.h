@@ -1,15 +1,16 @@
 #ifndef MEASUREMENTDATA_H
 #define MEASUREMENTDATA_H
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct
 {
     unsigned short sensorId;
-    unsigned short measuredValue;
-    unsigned short warningLow;
-    unsigned short warningHigh;
-    unsigned short alarmLow;
-    unsigned short alarmHigh;
+    int measuredValue;
+    int warningLow;
+    int warningHigh;
+    int alarmLow;
+    int alarmHigh;
 
 } measurementData;
 
@@ -22,22 +23,27 @@ typedef struct
 typedef struct
 {
     unsigned short sensorId;
-    unsigned short warningsLow;
-    unsigned short warningsHigh;
-    unsigned short alarmsLow;
-    unsigned short alarmsHigh;
+    int warningsLow;
+    int warningsHigh;
+    int alarmsLow;
+    int alarmsHigh;
 
 } warningsAlarmsData;
 
 int sortMeasurementsData(measurementDataSort *sortMeasurementsDataArray, measurementData *ptrData, int numLines);
 
-void readData(FILE *datei, unsigned int numLines, measurementData *ptrData);
+int checkID(measurementDataSort *sortMeasurementsDataArray, unsigned short sensorId, int numSensors);
 
-unsigned int numLines(FILE *datei);
+int checkNumber(measurementDataSort *sortMeasurementsDataArray, unsigned short sensorId, int numSensors);
+
+void readData(FILE *datei, int numLines, measurementData *ptrData);
+
+int numLines(FILE *datei);
 
 void warningsAlarms(measurementDataSort *sortMeasurementsDataArray, warningsAlarmsData *warningsAlarmsArray, int numSensors);
 
 void averageValue(measurementDataSort *sortMeasurementsDataArray, measurementDataSort *sortAverageMeasurementsDataArray, int numSensors);
 
 void medianValue(measurementDataSort *sortMeasurementsDataArray, measurementDataSort *sortAverageMeasurementsDataArray, int numSensors);
+
 #endif

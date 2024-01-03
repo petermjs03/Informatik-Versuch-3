@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "measurementData.h"
 
 void averageValue(measurementDataSort *sortMeasurementsDataArray, measurementDataSort *sortAverageMeasurementsDataArray, int numSensors)
