@@ -16,7 +16,7 @@ typedef struct
 
 typedef struct
 {
-    measurementData measurementData[100];
+    measurementData *measurementData;
     int numSensors;
 } measurementDataSort;
 

@@ -22,8 +22,20 @@ int main()
     fclose(datei);
 
     sortMeasurementsDataArray = (measurementDataSort *)malloc(numLine * sizeof(measurementDataSort));
+    
+    //Speicher platz Resavieren
+    for (int i = 0; i < numLine; i++)
+    {
+        sortMeasurementsDataArray[i].measurementData = (measurementData *)malloc(numLine * sizeof(measurementData));
+    }
     numSensors = sortMeasurementsData(sortMeasurementsDataArray, ptrData, numLine);
 
+    //frei geben vonn Speicher
+    for (int i = 0; i < numSensors; i++)
+    {
+        sortMeasurementsDataArray[i].measurementData = (measurementData *)realloc(sortMeasurementsDataArray[i].numSensors * sizeof(measurementData));
+    }
+    
     free(ptrData);
 
     sortMeasurementsDataArray = (measurementDataSort *)realloc(sortMeasurementsDataArray, numSensors * sizeof(measurementDataSort));
