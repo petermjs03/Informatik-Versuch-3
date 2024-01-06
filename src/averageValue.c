@@ -3,8 +3,6 @@
 // Dateiname: averageValue.c
 // Diese Funktion berechnet den Durchschnitt aus drei aufeinander folgenden Messwerten
 // und speichert diesen in einem neuen Array. Es werden ebenfalls alle Sensordaten an das neue Array übergeben.
-// Autor:
-//          Aaron Michael Weis/ 11261863
 // Datum: 06.01.24
 
 void averageValue(measurementDataSort *sortMeasurementsDataArray, measurementDataSort *sortAverageMeasurementsDataArray, int numSensors)

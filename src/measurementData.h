@@ -5,10 +5,6 @@
 
 // Dateiname: measurementData.h
 // Headerdatei für die Messdatenauswertung
-// Autoren:
-//          Aaron Michael Weis/ 11261863,
-//          Peter Wienken/      11286202,
-//          Peter Majoros/      11277532
 // Datum: 06.01.24
 
 // In dieser Struktur werden die Sensor- und Messdaten gespeichert

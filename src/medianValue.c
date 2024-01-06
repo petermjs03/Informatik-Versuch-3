@@ -3,8 +3,6 @@
 // Dateiname: medianValue.c
 // Diese Funktion berechnet den Median aus drei aufeinander folgenden Messwerten
 // und speichert diesen in einem neuen Array. Es werden ebenfalls alle Sensordaten an das neue Array übergeben.
-// Autor:
-//          Aaron Michael Weis/ 11261863
 // Datum: 06.01.24
 
 void medianValue(measurementDataSort *sortMeasurementsDataArray, measurementDataSort *sortMedianMeasurementsDataArray, int numSensors)

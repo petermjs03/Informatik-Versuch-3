@@ -3,8 +3,6 @@
 // Dateiname: warningsAlarms.c
 // Diese Funktion überprüft wie oft die Messwerte eines Sensors die
 // Alarm- und Wangrenzen über- bzw. unterschritten haben und speichert dies in einem Array ab.
-// Autor:
-//          Aaron Michael Weis/ 11261863
 // Datum: 06.01.24
 
 void warningsAlarms(measurementDataSort *sortMeasurementsDataArray, warningsAlarmsData *warningsAlarmsArray, int numSensors)
